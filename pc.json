@@ -1,0 +1,44 @@
+{
+  "pc": [
+    {
+      "id": 1,
+      "modele": "Latitude 3500 - 15.6",
+      "marque": "Dell",
+      "type": "Portable",
+      "category": "Bureautique",
+      "prixAchat": 120.88,
+      "prixVente": 300.1,
+      "dateEntreStock": "2012-04-23T18:25:43.511Z"
+    },
+    {
+      "modele": "dell latitude",
+      "marque": "Dell",
+      "type": "Portable",
+      "category": "Bureautique",
+      "prixAchat": 300,
+      "prixVente": 400,
+      "dateEntreStock": "2020-03-24T10:32:22.686Z",
+      "id": 2
+    },
+    {
+      "modele": "hp probook",
+      "marque": "HP",
+      "type": "Portable",
+      "category": "Gaming",
+      "prixAchat": 520,
+      "prixVente": 650,
+      "dateEntreStock": "2020-03-24T10:59:54.555Z",
+      "id": 3
+    },
+    {
+      "modele": "asus notebook",
+      "marque": "Asus",
+      "type": "Tablette Hybride",
+      "category": "Premier prix",
+      "prixAchat": 220,
+      "prixVente": 280,
+      "dateEntreStock": "2020-03-24T11:00:36.120Z",
+      "id": 4
+    }
+  ]
+}

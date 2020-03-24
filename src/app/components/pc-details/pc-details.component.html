@@ -1,0 +1,19 @@
+<div class="container">
+    <ng-container *ngIf="isLoading">
+      Chargement en cours
+    </ng-container>
+    
+    <ng-container *ngIf="!isLoading">
+      <h1>Détails du pc n° {{ pc.id }}</h1>
+      <label>Modele : {{ pc.modele }}</label> <br>
+      <label>Marque : {{ pc.marque }}</label><br>
+      <label>Type : {{ pc.type }}</label><br>
+      <label>Category : {{ pc.category }}</label><br>
+      <label>Prix d'Achat : {{ pc.prixAchat }}</label><br>
+      <label>Prix de vente : {{ pc.prixVente }}</label><br>
+      <label>Date d'entrée en stock : {{ pc.dateEntreStock|date: 'd/MM/y' }}</label>
+    </ng-container>
+    
+    
+    </div>
+    

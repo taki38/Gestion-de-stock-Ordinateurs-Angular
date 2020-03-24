@@ -1,0 +1,84 @@
+<div class="container">
+    <form #validationForm='ngForm' (ngSubmit)="addPc()">
+        <div class="form-group">
+            <label>Modele du Pc:</label>
+            <input #pcInput="ngModel" id="modele" name="modele" type="text" class="form-control" 
+                   [(ngModel)]="pcForm.modele" required>
+                 <div [hidden]="pcInput.valid" class="alert alert-danger">
+                     Le model du Pc n'est pas valide
+                 </div>  
+        </div>
+
+        <div class="form-group">
+            <label>Marque du Pc</label>
+            <ng-container *ngFor="let marque of marqueDisponible">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio"  id="inputRadio-{{marque}}" #marqueValidation="ngModel" name="marque" [value]="marque" 
+                     required [(ngModel)]="pcForm.marque" >
+                    <label for="customRadio" class="form-check-label" >
+                    {{marque}}
+                    </label>
+                </div>
+            </ng-container> 
+            <div [hidden]="validationForm.controls.marque?.valid" class="alert alert-danger">
+                vous devez choisir une marque
+            </div>  
+              
+        </div>
+
+        <div class="form-group">
+            <form class="form-inline">
+                <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Type du Pc</label>
+                <select #type="ngModel" [(ngModel)]="pcForm.type" name="type" required class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                  <option selected></option>
+                  <option *ngFor="let type of typeDisponible">{{type}}</option>
+                  
+                </select>
+            </form> 
+            <div [hidden]="type?.valid" class="alert alert-danger">
+                vous devez choisir un type de pc
+            </div>   
+        </div>
+
+        <div class="form-group">
+            <label>Categorie du Pc</label>
+            <ng-container *ngFor="let category of categoryDisponible">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio"  id="inputRadio-{{category}}" #categoryValidation="ngModel" name="category" [value]="category" 
+                     required [(ngModel)]="pcForm.category" >
+                    <label for="customRadio" class="form-check-label" >
+                    {{category}}
+                    </label>
+                </div>
+            </ng-container> 
+            <div [hidden]="validationForm.controls.category?.valid" class="alert alert-danger">
+                vous devez choisir une categorie
+            </div>  
+              
+        </div>
+
+        <div class="form-group">
+            <label>Prix d'achat:</label>
+            <input #pcInput="ngModel" id="prixAchat" name="prixAchat" type="number" class="form-control" 
+                   [(ngModel)]="pcForm.prixAchat" required>
+                 <div [hidden]="validationForm.controls.prixAchat?.valid" class="alert alert-danger">
+                     Le prix d'achat n'est pas valide
+                 </div>  
+        </div>
+
+        <div class="form-group">
+            <label>Prix de vente:</label>
+            <input #pcInput="ngModel" id="prixVente" name="prixVente" type="number" class="form-control" 
+                   [(ngModel)]="pcForm.prixVente" required>
+                 <div [hidden]="validationForm.controls.prixVente?.valid" class="alert alert-danger">
+                     Le prix de vente n'est pas valide
+                 </div>  
+        </div>
+
+        <input [disabled]="!validationForm.valid" type="submit" class="btn btn-success" value="Valider">
+
+
+
+
+    </form>
+</div>

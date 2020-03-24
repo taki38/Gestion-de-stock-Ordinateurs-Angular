@@ -1,0 +1,45 @@
+<ng-container *ngIf="isLoading">
+    Chargement en cours ...
+</ng-container>
+<ng-container *ngIf="!isLoading">
+    <img src="https://media.ldlc.com/cms/shop/Vit-LDLC-Clermont-ferrand-int1.jpg" alt="pc">
+    <h1 class="p-5 text-center">{{ pcs.length }} pc disponibles en stock</h1>
+
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">modele</th>
+        <th scope="col">marque</th>
+        <th scope="col">type</th>
+        <th scope="col">categorie</th>
+        <th scope="col">prix d'achat</th>
+        <th scope="col">prix de vente</th>
+        <th scope="col">Rentabilite</th>
+        <th scope="col">date d'entree en stock</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor= "let pc of pcs">
+        <th scope="row">{{pc.id}}</th>
+        <td>{{pc.modele}}</td>
+        <td>{{pc.marque}}</td>
+        <td>{{pc.type}}</td>
+        <td>{{pc.category}}</td>
+        <td>{{pc.prixAchat}}</td>
+        <td>{{pc.prixVente}}</td>
+        <td>{{result(pc)}}</td>
+        <td>{{pc.dateEntreStock|date:"d/MM/y"}}</td>
+        <td>
+            <button type="button" class="btn btn-info " [routerLink]="['/pc/', pc.id]">Voir + de details</button>
+            <button type="button" class="btn btn-light" [routerLink]="['/edit', pc.id]">Editer</button>
+            <button (click)="deletePc(pc)" type="button" class="btn btn-danger d-flex justify-content-center">Supprimer</button>
+        </td>
+        
+      </tr>
+     
+    </tbody>
+  </table>
+
+</ng-container>  
